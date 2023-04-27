@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: indianred;
+    background-color: #b17b7b;
     color: white;
     font-family: 'Lexend', sans-serif;
     min-height: 100vh;
@@ -28,6 +28,43 @@ body{
         padding-right: 50px;
     }
 }
+
+.modal {
+    display: flex;
+    position: absolute;
+    top: -10px;
+    color: #4c4848;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 2px solid #972c2c;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+
+}
+.modal-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+form{
+    position: relative;
+}
+
+.ok-button{
+    font-size: 1rem;
+    padding: 0.2rem;
+    padding-bottom: 0.1rem;
+
+}
+.modal-text{
+    align-self: center;
+}
+
+
+
 header{
     font-size: 1.5rem;
 }

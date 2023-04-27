@@ -2,16 +2,24 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
+const modal = document.querySelector('.modal');
+const closeModal = modal.querySelector('.ok-button');
+
 
 document.addEventListener('DOMContentLoaded', getLocalTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', todoInteract);
 filterOption.addEventListener('change', filterTodo);
 
+closeModal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal-show');
+})
+
 function addTodo(e){
     e.preventDefault();
     if(todoInput.value.trim()===''){
-        alert('Please enter your `todo`!');
+        modalShow();
     }else {
         const todoDiv = document.createElement('div');
         todoDiv.classList.add('todo');
@@ -39,6 +47,10 @@ function addTodo(e){
 
 }
 
+
+function modalShow(){
+    modal.classList.add('modal-show');
+}
 
 function todoInteract(e){
     const item = e.target;
